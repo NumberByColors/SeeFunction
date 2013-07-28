@@ -6,4 +6,4 @@ See Function is a prototype system for seeing software.
 
 Copyright 2013 David Stephens
 
-Licensed under the "Probably not going to be an issue, but just talk to David" license.
+Licensed under the "David has totalitarian control until we chat" license.
