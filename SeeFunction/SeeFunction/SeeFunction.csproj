@@ -18,9 +18,7 @@
   <ItemGroup>
     <Content Include="app.css" />
     <Content Include="default.html" />
-    <Content Include="app.js">
-      <DependentUpon>app.ts</DependentUpon>
-    </Content>
+    <TypeScriptCompile Include="fileUploader.ts" />
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="app.ts" />
@@ -49,7 +47,7 @@
         <WebProjectProperties>
           <UseIIS>True</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>0</DevelopmentServerPort>
+          <DevelopmentServerPort>10448</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
           <IISUrl>http://localhost:4630/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
