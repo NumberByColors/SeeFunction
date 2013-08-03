@@ -16,14 +16,14 @@
     <IISExpressUseClassicPipelineMode />
   </PropertyGroup>
   <ItemGroup>
-    <Content Include="app.css" />
+    <Content Include="Styles\app.css" />
     <Content Include="default.html" />
-    <TypeScriptCompile Include="fileUploader.ts" />
   </ItemGroup>
   <ItemGroup>
-    <TypeScriptCompile Include="app.ts" />
+    <TypeScriptCompile Include="Scripts\app.ts" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Styles\unsemantic-grid-responsive.css" />
     <Content Include="web.config" />
     <None Include="web.Debug.config">
       <DependentUpon>web.config</DependentUpon>

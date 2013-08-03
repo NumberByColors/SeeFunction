@@ -1,12 +1,29 @@
 ﻿<html lang="en">
 <head>
-    <meta charset="utf-8" />
+    <!-- Some meta info included for the CSS responsive grid -->
+    <meta charset="utf-8" 
+          name ="viewport"
+          content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1"/>
     <title>See Function</title>
-    <link rel="stylesheet" href="app.css" type="text/css" />    
+    <link rel="stylesheet" 
+          href="/Styles/app.css" 
+          type="text/css" />  
+    <link rel="stylesheet" 
+          href="/Styles/unsemantic-grid-responsive.css" 
+          type="text/css" /> 
 </head>
 <body>
+    <div class="grid-container">
+        <div id="header" class="grid-100 grid-parent">
+            <div id="logo" class="grid-25 red">
+                Hey!
+            </div>
+            <div id="uploadBox" class="grid-75 blue">
+                Upload box
+            </div>
+        </div>
+    </div>
     <h1>See Function</h1>
-
     <div id="content"></div>
     <form id="fileUploadForm" enctype="multipart/form-data">
         <div class="row">
@@ -18,6 +35,6 @@
         <div id="fileType"></div>        
         <div id="progressNumber"></div>
     </form>
-    <script src="app.js"></script>
+    <script src="/Scripts/app.js"></script>
 </body>
 </html>
