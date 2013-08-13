@@ -44,7 +44,7 @@ span {
 }
 
 .header {    
-    border: 1px solid gray;    
+    /*border: 1px solid gray;*/    
     height: 50px;
 }
 
@@ -90,7 +90,7 @@ span {
 }
 
 .options {
-    padding-top: 5%;
+    padding-top: 8%;
     text-align: center;
 }
 
