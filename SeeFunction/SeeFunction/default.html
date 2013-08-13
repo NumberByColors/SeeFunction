@@ -21,26 +21,26 @@
                     <span>SEE</span><span>FUNCTION</span>
                 </div>
             </div>
-            <div class="file-input-box"></div>
+            <div class="file-input-box">
+                <form id="fileUploadForm" enctype="multipart/form-data">
+                    <input type="file" name="fileUploader" id="fileUploader" />
+                </form>
+            </div>
             <div class="options-box">
                 <div class="options">
                     <span>OPTIONS</span>
                 </div>
             </div>
         </div>
+
+        <canvas id="visualization"></canvas>
         
-        <div id="content"></div>
-        <form id="fileUploadForm" enctype="multipart/form-data">
-            <div class="row">
-                <label for="fileToUpload">Select a File to Upload</label><br />
-                <input type="file" name="fileUploader" id="fileUploader" />
-            </div>
-            <div id="fileName"></div>
-            <div id="fileSize"></div>
-            <div id="fileType"></div>
-            <div id="progressNumber"></div>
-            <div id="fileContents"></div>
-        </form>
+        <!--<div id="content"></div>        
+        <div id="fileName"></div>
+        <div id="fileSize"></div>
+        <div id="fileType"></div>
+        <div id="progressNumber"></div>
+        <div id="fileContents"></div>-->
     </div>
     
 
