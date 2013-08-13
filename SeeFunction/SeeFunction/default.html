@@ -8,33 +8,44 @@
     <link rel="stylesheet" 
           href="/Styles/app.css" 
           type="text/css" />  
-    <link rel="stylesheet" 
+    <!--<link rel="stylesheet" 
           href="/Styles/unsemantic-grid-responsive.css" 
-          type="text/css" /> 
+          type="text/css" /> -->
 </head>
 <body>
-    <div class="grid-container">
-        <div id="header" class="grid-100 grid-parent">
-            <div id="logo" class="grid-25 red">
-                Hey!
+    <div class="app-container">
+        <div class="headerStripe"></div>
+        <div class="header float-container">
+            <div class="logo-box">
+                <div class="logo">
+                    <span>SEE</span><span> FUNCTION</span>
+                </div>
             </div>
-            <div id="uploadBox" class="grid-75 blue">
-                Upload box
+            <div class="file-input-box"></div>
+            <div class="options-box">
+                <div class="options">
+                    <span>OPTIONS</span>
+                </div>
             </div>
         </div>
+        
+        <div id="content"></div>
+        <form id="fileUploadForm" enctype="multipart/form-data">
+            <div class="row">
+                <label for="fileToUpload">Select a File to Upload</label><br />
+                <input type="file" name="fileUploader" id="fileUploader" />
+            </div>
+            <div id="fileName"></div>
+            <div id="fileSize"></div>
+            <div id="fileType"></div>
+            <div id="progressNumber"></div>
+            <div id="fileContents"></div>
+        </form>
     </div>
-    <h1>See Function</h1>
-    <div id="content"></div>
-    <form id="fileUploadForm" enctype="multipart/form-data">
-        <div class="row">
-            <label for="fileToUpload">Select a File to Upload</label><br />
-            <input type="file" name="fileUploader" id="fileUploader"/>
-        </div>
-        <div id="fileName"></div>
-        <div id="fileSize"></div>
-        <div id="fileType"></div>        
-        <div id="progressNumber"></div>
-    </form>
+    
+
+    <!--Scripts-->
+    <script src="/Scripts/jquery/jquery-2.0.3.min.js"></script>
     <script src="/Scripts/app.js"></script>
 </body>
 </html>
