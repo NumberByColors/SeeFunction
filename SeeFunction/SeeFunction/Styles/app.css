@@ -65,14 +65,19 @@ span {
     font-weight: bold;
     font-family: Arial;
     font-size: large;
+    vertical-align: top;
 }
 
-.logo span:first-child {
+.logo span:nth-child(2) {
     color:white;
 }
 
 .logo span:last-child {
     color: orange;
+}
+
+.logo img {
+    margin-right: 5px;
 }
 
 .file-input-box {

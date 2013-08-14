@@ -21,6 +21,8 @@
     <None Include="Scripts\jquery\jquery-2.0.3.intellisense.js" />
     <Content Include="Scripts\jquery\jquery-2.0.3.js" />
     <Content Include="Scripts\jquery\jquery-2.0.3.min.js" />
+    <Content Include="favicon.PNG" />
+    <Content Include="seefunctionlogo.PNG" />
     <Content Include="Styles\app.css" />
     <Content Include="default.html" />
   </ItemGroup>
