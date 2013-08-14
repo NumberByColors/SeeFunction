@@ -22,16 +22,21 @@
     <Content Include="Scripts\jquery\jquery-2.0.3.js" />
     <Content Include="Scripts\jquery\jquery-2.0.3.min.js" />
     <Content Include="favicon.PNG" />
+    <Content Include="Scripts\qunit\qunit-1.12.0.js" />
     <Content Include="seefunctionlogo.PNG" />
     <Content Include="Styles\app.css" />
     <Content Include="default.html" />
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="Scripts\app.ts" />
+    <TypeScriptCompile Include="Scripts\tests.ts" />
     <TypeScriptCompile Include="Scripts\typings\jquery\jquery.d.ts" />
+    <TypeScriptCompile Include="Scripts\typings\qunit\qunit.d.ts" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Styles\qunit-1.12.0.css" />
     <Content Include="Styles\unsemantic-grid-responsive.css" />
+    <Content Include="tests.html" />
     <Content Include="web.config" />
     <Content Include="Scripts\jquery\jquery-2.0.3.min.map" />
     <None Include="web.Debug.config">
