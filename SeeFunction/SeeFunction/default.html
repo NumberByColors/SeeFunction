@@ -24,7 +24,8 @@
             </div>
             <div class="file-input-box">
                 <form id="fileUploadForm" enctype="multipart/form-data">
-                    <input type="file" name="fileUploader" id="fileUploader" />
+                    <!--Use the directory, webkitdirectory, and mozdirectory attributes to select folders, but ONLY folders.-->
+                    <input type="file" name="fileUploader" id="fileUploader" multiple/>
                 </form>
             </div>
             <div class="options-box">
@@ -38,12 +39,13 @@
         <canvas id="visualization"></canvas>
 
         <a href="/tests.html">Unit Tests</a>
-        <!--<div id="content"></div>        
+        <div id="content"></div>
+        <div id="numberOfFiles"></div>        
         <div id="fileName"></div>
         <div id="fileSize"></div>
         <div id="fileType"></div>
         <div id="progressNumber"></div>
-        <div id="fileContents"></div>-->
+        <div id="fileContents"></div>
     </div>
     
 
