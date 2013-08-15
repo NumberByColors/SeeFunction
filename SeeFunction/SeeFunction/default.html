@@ -22,11 +22,12 @@
                     <img src="/seefunctionlogo.png" width="56" height="20"/><span>SEE</span><span>FUNCTION</span>
                 </div>
             </div>
-            <div class="file-input-box">
+            <div class="file-input-box float-container">
                 <form id="fileUploadForm" enctype="multipart/form-data">
                     <!--Use the directory, webkitdirectory, and mozdirectory attributes to select folders, but ONLY folders.-->
                     <input type="file" name="fileUploader" id="fileUploader" multiple/>
                 </form>
+                <div id="uploadPercent"></div>
             </div>
             <div class="options-box">
                 <div class="options">
@@ -48,8 +49,7 @@
         <div id="progressNumber"></div>
         <div id="fileContents"></div>
     </div>
-    
-
+   
     <!--Scripts-->
     <script src="/Scripts/jquery/jquery-2.0.3.min.js"></script>
     <script src="/Scripts/FileUtilities.js"></script>
