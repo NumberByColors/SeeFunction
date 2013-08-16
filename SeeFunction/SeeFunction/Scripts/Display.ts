@@ -19,20 +19,5 @@ module Display {
 
     export function showFileContents(fileContents: string) {
         $("#fileContents").text(fileContents);
-
-        //I got the hair-brained idea that writing to the DOM several times would make the page more responsive:
-        //var fileContentsDiv = $("#fileContents");
-        //fileContentsDiv.text("");
-
-        //var chunkSize = 512; //512 characters ~= 1 KB
-        //var numOfChunks = Math.ceil(fileContents.length / chunkSize);
-        //var chunks: string[]= [];
-        //for (var i = 0; i < numOfChunks; i++) {
-        //    var position = chunkSize * i;
-        //    chunks.push(fileContents.substr(position, chunkSize));
-        //}
-
-        
-        //chunks.forEach((chunk) => fileContentsDiv.append(chunk));
     }
 }
