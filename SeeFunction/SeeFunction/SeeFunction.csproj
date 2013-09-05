@@ -29,12 +29,16 @@
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="Scripts\app.ts" />
+    <TypeScriptCompile Include="Scripts\compiler\ILexicalGrammar.ts" />
     <TypeScriptCompile Include="Scripts\compiler\Lexer.ts" />
     <TypeScriptCompile Include="Scripts\compiler\IToken.ts" />
+    <TypeScriptCompile Include="Scripts\core\PatternExpression.ts" />
+    <TypeScriptCompile Include="Scripts\core\Times.ts" />
+    <TypeScriptCompile Include="Scripts\core\CharacterEnumerator.ts" />
+    <TypeScriptCompile Include="Scripts\core\SlidingTextWindow.ts" />
+    <TypeScriptCompile Include="Scripts\core\Pattern.ts" />
     <TypeScriptCompile Include="Scripts\Display.ts" />
     <TypeScriptCompile Include="Scripts\Files.ts" />
-    <TypeScriptCompile Include="Scripts\infrastructure\IEnumerable.ts" />
-    <TypeScriptCompile Include="Scripts\infrastructure\IEnumerator.ts" />
     <TypeScriptCompile Include="Scripts\tests.ts" />
     <TypeScriptCompile Include="Scripts\typings\FileReaderSync.d.ts" />
     <TypeScriptCompile Include="Scripts\typings\jquery\jquery.d.ts" />
@@ -55,6 +59,13 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Scripts\workers\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
