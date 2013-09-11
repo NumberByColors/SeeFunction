@@ -19,7 +19,16 @@ class Pattern {
         //Need to handle error case when char is many characters
     }
 
-    public matchOneOf(strings: string[]): Pattern {
+    public forString(str: string): Pattern {
+        return Pattern.fromExpression(PatternExpression.forString(str));
+    }
+
+    public orString(str: string): Pattern {
+        this.expr.orWith(PatternExpression.forString(str));
+        return this;
+    }
+
+    public oneOfStrings(strings: string[]): Pattern {
         var restStrings = strings.slice(1);
         var restPattern: PatternExpression = undefined;
         restStrings.forEach(str => restPattern.andWith(PatternExpression.forString(str)));

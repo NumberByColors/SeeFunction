@@ -43,12 +43,12 @@ class PatternExpression {
     }
 
     public andWith(patternExpr: PatternExpression): PatternExpression {        
-        this.and.concat(patternExpr);
+        this.and = this.and.concat(patternExpr);
         return this;
     }
 
     public orWith(patternExpr: PatternExpression): PatternExpression {
-        this.or.concat(patternExpr);
+        this.or = this.or.concat(patternExpr);
         return this;
     }
 }
