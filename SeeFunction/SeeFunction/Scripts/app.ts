@@ -1,6 +1,6 @@
 //Handler for the window load event
 window.onload = () => {
-
+   
 };
 
 //Handler for the file uploader
@@ -9,7 +9,7 @@ window.onload = () => {
 var fileUploader = <HTMLInputElement> document.getElementById("fileUploader");
 fileUploader.onchange = () => {
     if (fileUploader.files) {        
-        Display.showUploadInfo(fileUploader.files);        
+        Display.showUploadInfo(fileUploader.files);  
 
         Files.readFileText(fileUploader.files[0], Display.uploadProgressHandler)
             .then(Display.showFileContents, Display.uploadErrorHandler);        

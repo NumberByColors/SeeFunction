@@ -5,6 +5,16 @@ class Pattern {
         
     }
 
+    //Function that performs a pattern match given a pattern and text
+    public static match(pattern: Pattern, text: string): boolean {
+        return false; //Not implemented
+        if (text[0] === pattern.expr.char) {
+
+        } else {
+
+        }
+    }
+
     private static fromExpression(expression: PatternExpression): Pattern {
         var pattern = new Pattern();
         pattern.expr = expression;
