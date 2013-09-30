@@ -1,2 +1,82 @@
 ﻿//Parser generated using PEG.js at http://pegjs.majda.cz/online
+//Based on the ECMAScript 5 spec, sans regular expressions
 
+//Lexical grammar ---------------------------------------------
+SourceCharacter =
+	.
+
+InputElementDiv = 
+	WhiteSpace 
+	/ LineTerminator
+	/ Comment
+	/ Token
+	/ DivPunctuator
+
+//Partially based on http://www.fileformat.info/info/unicode/category/Zs/list.htm
+WhiteSpace =
+	[\u0009
+	 \u000B
+	 \u000C
+	 \u0020
+	 \u00A0
+	 \uFEFF
+	 \u1680
+	 \u180E
+	 \u2000
+	 \u2001
+	 \u2002
+	 \u2003
+	 \u2004
+	 \u2005
+	 \u2006
+	 \u2007
+	 \u2008
+	 \u2009
+	 \u200A
+	 \u202F
+	 \u205F
+	 \u3000]
+
+LineTerminator = 
+	[\u000A
+	 \u000D
+	 \u2028
+	 \u2029]
+
+LineTerminatorSequence = 
+	'\u000A'
+	/ ('\u000D'(!'\u000A'))
+	/ '\u2028'
+	/ '\u2029'
+	/ ('\u000D''\u000A')
+
+Comment = 
+	MultiLineComment
+	/ SingleLineComment
+
+MultiLineComment = 
+	'/*' MultiLineCommentChars? '*/'
+
+MultiLineCommentChars =
+	MultiLineNotAsteriskChar MultiLineCommentChars?
+	/ '*' PostAsteriskCommentChars?
+
+PostAsteriskCommentChars =
+	MultiLineNotForwardSlashOrAsteriskChar MultiLineCommentChars?
+	/ '*' PostAsteriskCommentChars?
+
+MultiLineNotAsteriskChar =
+	[^*]
+
+MultiLineNotForwardSlashOrAsteriskChar =
+	[^*/]
+
+SingleLineComment =
+	'//' SingleLineCommentChars?
+
+SingleLineCommentChars =
+	SingleLineCommentChar SingleLineCommentChars?
+
+SingleLineCommentChar =
+	
+	
