@@ -18,6 +18,8 @@
   </PropertyGroup>
   <ItemGroup>
     <Content Include="packages.config" />
+    <Content Include="Scripts\compiler\javascriptGrammar.pegjs" />
+    <Content Include="parsergenerator.html" />
     <None Include="Scripts\jquery\jquery-2.0.3.intellisense.js" />
     <None Include="Scripts\compiler\javascriptGrammar.peg" />
     <Content Include="Scripts\compiler\peg-0.7.0.min.js" />
