@@ -1,6 +1,10 @@
-# See Function
+## See Function
 
 See Function is a prototype system for seeing software.
+
+## Getting Started
+
+Use Visual Studio 2013 with TypeScript 0.9.5 to build.
 
 ## Copyright and license
 
