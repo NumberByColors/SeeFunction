@@ -1,5 +1,0 @@
---disallowbool 
---disallowimportmodule 
---comments
---out C:/Users/David/SkyDrive/SeeFunction/js
-app.ts
