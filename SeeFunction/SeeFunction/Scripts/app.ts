@@ -12,6 +12,7 @@ fileUploader.onchange = () => {
         Display.showUploadInfo(fileUploader.files);  
 
         Files.readFileText(fileUploader.files[0], Display.uploadProgressHandler)
-            .then(Display.showFileContents, Display.uploadErrorHandler);        
+             .then(Display.showFileContents, Display.uploadErrorHandler);
+             //.then(Display.showFileContents, Display.uploadErrorHandler);        
     }
 };

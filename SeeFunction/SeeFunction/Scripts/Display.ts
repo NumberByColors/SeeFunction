@@ -13,7 +13,7 @@ module Display {
         $("#uploadPercent").text(progressPercent + "% uploaded");
     }
 
-    export function uploadErrorHandler(errorEvent: ErrorEvent) {
+    export function uploadErrorHandler() {
         $("#fileContents").text("An error occurred while reading the file.");
     }
 

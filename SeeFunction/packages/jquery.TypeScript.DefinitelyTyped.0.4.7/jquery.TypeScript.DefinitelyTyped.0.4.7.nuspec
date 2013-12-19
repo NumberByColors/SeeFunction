@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
   <metadata>
     <id>jquery.TypeScript.DefinitelyTyped</id>
-    <version>0.2.2</version>
+    <version>0.4.7</version>
     <title>jquery.TypeScript.DefinitelyTyped</title>
     <authors>Jason Jarrett</authors>
     <owners>Jason Jarrett</owners>
@@ -10,7 +10,7 @@
     <projectUrl>https://github.com/DefinitelyTyped/</projectUrl>
     <iconUrl>http://www.gravatar.com/avatar/7226aa211e53b8d7447756fbc1f15e12?s=200</iconUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
-    <description>TypeScript Definitions (d.ts) for jquery. Generated based off the DefinitelyTyped repository [git commit: 12f71331b1a4d1000e549cb7e0e67787c4d0ad3f]. http://github.com/DefinitelyTyped</description>
+    <description>TypeScript Definitions (d.ts) for jquery. Generated based off the DefinitelyTyped repository [git commit: 30a55d258b48aef18a3a0f07171ae2dcddcf2185]. http://github.com/DefinitelyTyped</description>
     <releaseNotes />
     <copyright>Copyright 2013</copyright>
     <language />
