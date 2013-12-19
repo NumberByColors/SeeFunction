@@ -18,11 +18,8 @@
   </PropertyGroup>
   <ItemGroup>
     <Content Include="packages.config" />
-    <Content Include="Scripts\compiler\javascriptGrammar.pegjs" />
     <Content Include="parsergenerator.html" />
     <None Include="Scripts\jquery\jquery-2.0.3.intellisense.js" />
-    <None Include="Scripts\compiler\javascriptGrammar.peg" />
-    <Content Include="Scripts\compiler\peg-0.7.0.min.js" />
     <Content Include="Scripts\jquery\jquery-2.0.3.js" />
     <Content Include="Scripts\jquery\jquery-2.0.3.min.js" />
     <Content Include="favicon.PNG" />
@@ -33,16 +30,6 @@
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="Scripts\app.ts" />
-    <TypeScriptCompile Include="Scripts\compiler\ILexicalGrammar.ts" />
-    <TypeScriptCompile Include="Scripts\compiler\IProduction.ts" />
-    <TypeScriptCompile Include="Scripts\compiler\JavaScriptLexicalGrammar.ts" />
-    <TypeScriptCompile Include="Scripts\compiler\Lexer.ts" />
-    <TypeScriptCompile Include="Scripts\compiler\IToken.ts" />
-    <TypeScriptCompile Include="Scripts\core\PatternExpression.ts" />
-    <TypeScriptCompile Include="Scripts\core\Times.ts" />
-    <TypeScriptCompile Include="Scripts\core\CharacterEnumerator.ts" />
-    <TypeScriptCompile Include="Scripts\core\SlidingTextWindow.ts" />
-    <TypeScriptCompile Include="Scripts\core\Pattern.ts" />
     <TypeScriptCompile Include="Scripts\Display.ts" />
     <TypeScriptCompile Include="Scripts\Files.ts" />
     <TypeScriptCompile Include="Scripts\tests.ts" />
@@ -64,6 +51,8 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Scripts\compiler\" />
+    <Folder Include="Scripts\core\" />
     <Folder Include="Scripts\workers\" />
   </ItemGroup>
   <ItemGroup>
