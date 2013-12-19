@@ -18,7 +18,6 @@
   </PropertyGroup>
   <ItemGroup>
     <Content Include="packages.config" />
-    <Content Include="parsergenerator.html" />
     <None Include="Scripts\jquery\jquery-2.0.3.intellisense.js" />
     <Content Include="Scripts\jquery\jquery-2.0.3.js" />
     <Content Include="Scripts\jquery\jquery-2.0.3.min.js" />
@@ -29,10 +28,10 @@
     <Content Include="default.html" />
   </ItemGroup>
   <ItemGroup>
-    <TypeScriptCompile Include="Scripts\app.ts" />
+    <TypeScriptCompile Include="Scripts\App.ts" />
     <TypeScriptCompile Include="Scripts\Display.ts" />
     <TypeScriptCompile Include="Scripts\Files.ts" />
-    <TypeScriptCompile Include="Scripts\tests.ts" />
+    <TypeScriptCompile Include="Scripts\Tests.ts" />
     <TypeScriptCompile Include="Scripts\typings\FileReaderSync.d.ts" />
     <TypeScriptCompile Include="Scripts\typings\jquery\jquery.d.ts" />
     <TypeScriptCompile Include="Scripts\typings\qunit\qunit.d.ts" />

@@ -1,6 +1,10 @@
 //Handler for the window load event
 window.onload = () => {
-   
+    var canvas = <HTMLCanvasElement> document.getElementById("visualization");
+    var context = canvas.getContext("2d");
+    context.font = "14px sans-sarif";
+    context.textAlign = "center";
+    context.fillText("Hello, world!", canvas.width / 2, canvas.height / 2);
 };
 
 //Handler for the file uploader
@@ -12,7 +16,6 @@ fileUploader.onchange = () => {
         Display.showUploadInfo(fileUploader.files);  
 
         Files.readFileText(fileUploader.files[0], Display.uploadProgressHandler)
-             .then(Display.showFileContents, Display.uploadErrorHandler);
-             //.then(Display.showFileContents, Display.uploadErrorHandler);        
+             .then(Display.showFileContents, Display.uploadErrorHandler);       
     }
 };
