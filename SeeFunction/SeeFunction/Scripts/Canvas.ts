@@ -112,51 +112,50 @@ class Canvas {
  
     private trackTransforms() {
         this.svg = <SVGSVGElement> document.createElementNS("http://www.w3.org/2000/svg", 'svg');
-        var xform = this.svg.createSVGMatrix();
-        this.transformMatrix = xform;
+        this.transformMatrix = this.svg.createSVGMatrix();
 
         var savedTransforms = [];
         var save = this.context.save;
         this.context.save = () => {
-            savedTransforms.push(xform.translate(0, 0));
+            savedTransforms.push(this.transformMatrix.translate(0, 0));
             return save.call(this.context);
         };
         var restore = this.context.restore;
         this.context.restore = () => {
-            xform = savedTransforms.pop();
+            this.transformMatrix = savedTransforms.pop();
             return restore.call(this.context);
         };
 
         var scale = this.context.scale;
         this.context.scale = (sx, sy) => {
-            xform = xform.scaleNonUniform(sx, sy);
+            this.transformMatrix = this.transformMatrix.scaleNonUniform(sx, sy);
             return scale.call(this.context, sx, sy);
         };
         var rotate = this.context.rotate;
         this.context.rotate = radians => {
-            xform = xform.rotate(radians * 180 / Math.PI);
+            this.transformMatrix = this.transformMatrix.rotate(radians * 180 / Math.PI);
             return rotate.call(this.context, radians);
         };
         var translate = this.context.translate;
         this.context.translate = (dx, dy) => {
-            xform = xform.translate(dx, dy);
+            this.transformMatrix = this.transformMatrix.translate(dx, dy);
             return translate.call(this.context, dx, dy);
         };
         var transform = this.context.transform;
         this.context.transform = (a, b, c, d, e, f) => {
             var m2 = this.svg.createSVGMatrix();
             m2.a = a; m2.b = b; m2.c = c; m2.d = d; m2.e = e; m2.f = f;
-            xform = xform.multiply(m2);
+            this.transformMatrix = this.transformMatrix.multiply(m2);
             return transform.call(this.context, a, b, c, d, e, f);
         };
         var setTransform = this.context.setTransform;
         this.context.setTransform = (a, b, c, d, e, f) => {
-            xform.a = a;
-            xform.b = b;
-            xform.c = c;
-            xform.d = d;
-            xform.e = e;
-            xform.f = f;
+            this.transformMatrix.a = a;
+            this.transformMatrix.b = b;
+            this.transformMatrix.c = c;
+            this.transformMatrix.d = d;
+            this.transformMatrix.e = e;
+            this.transformMatrix.f = f;
             return setTransform.call(this.context, a, b, c, d, e, f);
         };        
     }
