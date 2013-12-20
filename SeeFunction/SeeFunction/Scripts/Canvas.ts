@@ -76,8 +76,16 @@ class Canvas {
             }
         }, false);
 
-        this.canvasElement.addEventListener("DOMMouseScroll", self.handleScroll, false);
-        this.canvasElement.addEventListener("mousewheel", self.handleScroll, false);
+        function handleScroll(evt: MouseWheelEvent) {
+            var delta = evt.wheelDelta ? evt.wheelDelta / 40 : evt.detail ? -evt.detail : 0;
+            if (delta) {
+                self.zoom(delta);
+            }
+            return evt.preventDefault() && false;
+        }
+
+        this.canvasElement.addEventListener("DOMMouseScroll", handleScroll, false);
+        this.canvasElement.addEventListener("mousewheel", handleScroll, false);
     }
 
     private zoom(clicks: number) {
@@ -93,14 +101,7 @@ class Canvas {
         this.redraw();
     }
 
-    private handleScroll(evt) {
-        var delta = evt.wheelData ? evt.wheelData / 40 : evt.detail ? -evt.detail : 0;
-        if (delta) {
-            this.zoom(delta);
-        }
-
-        return evt.preventDefault() && false;
-    }
+    
 
     private transformedPoint(x: number, y: number) {
         var pt = this.svg.createSVGPoint();
