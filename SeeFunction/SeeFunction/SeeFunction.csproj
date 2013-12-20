@@ -30,6 +30,7 @@
   <ItemGroup>
     <TypeScriptCompile Include="Scripts\App.ts" />
     <TypeScriptCompile Include="Scripts\Display.ts" />
+    <TypeScriptCompile Include="Scripts\Canvas.ts" />
     <TypeScriptCompile Include="Scripts\Files.ts" />
     <TypeScriptCompile Include="Scripts\Tests.ts" />
     <TypeScriptCompile Include="Scripts\typings\FileReaderSync.d.ts" />
