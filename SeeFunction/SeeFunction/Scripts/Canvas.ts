@@ -24,10 +24,6 @@ class Canvas {
             if (canvasOptions.panAndZoom) {
                 this.enablePanAndZoom();
             }   
-
-            if (canvasOptions.dpiScaled) {
-                this.enableDpiScaling();
-            }
         }
 
         this.redraw();
@@ -99,9 +95,7 @@ class Canvas {
         this.context.translate(-pt.x, -pt.y);
 
         this.redraw();
-    }
-
-    
+    }    
 
     private transformedPoint(x: number, y: number) {
         var pt = this.svg.createSVGPoint();
@@ -160,13 +154,8 @@ class Canvas {
             return setTransform.call(this.context, a, b, c, d, e, f);
         };        
     }
-
-    private enableDpiScaling() {
-
-    }
 } 
 
 interface CanvasOptions {
     panAndZoom?: boolean;
-    dpiScaled?: boolean;
 }

@@ -1,10 +1,10 @@
 //Handler for the window load event
 window.onload = () => {
     var canvas = new Canvas("visualization", context => {
-        context.font = "14px sans-sarif";
+        context.font = "12px sans-sarif";
         context.textAlign = "center";
         context.fillText("Hello, world!", context.canvas.width / 2, context.canvas.height / 2);
-    }, { panAndZoom: true, dpiScaled: false });
+    }, { panAndZoom: true });
 };
 
 //Handler for the file uploader
