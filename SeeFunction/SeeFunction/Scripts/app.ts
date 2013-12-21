@@ -1,9 +1,18 @@
 //Handler for the window load event
 window.onload = () => {
     var canvas = new Canvas("visualization", context => {
-        context.font = "12px sans-sarif";
-        context.textAlign = "center";
-        context.fillText("Hello, world!", context.canvas.width / 2, context.canvas.height / 2);
+        var centerX = context.canvas.width / 2;
+        var centerY = context.canvas.height / 2;
+        var squareLength = 100;
+        var spacing = 5;
+        context.fillStyle = "#F65314"; //Microsoft red
+        context.fillRect(centerX - spacing - squareLength, centerY - spacing - squareLength, squareLength, squareLength); //Top-left square
+        context.fillStyle = "#7CBB00"; //Microsoft green
+        context.fillRect(centerX + spacing, centerY - spacing - squareLength, squareLength, squareLength); //Top-right square
+        context.fillStyle = "#FFBB00"; //Microsoft yellow
+        context.fillRect(centerX + spacing, centerY + spacing, squareLength, squareLength); //Bottom-right square
+        context.fillStyle = "#00A1F1"; //Microsoft blue
+        context.fillRect(centerX - spacing - squareLength, centerY + spacing, squareLength, squareLength); //Bottom-left square
     }, { panAndZoom: true });
 };
 
