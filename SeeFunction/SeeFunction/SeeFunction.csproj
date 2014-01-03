@@ -30,8 +30,14 @@
   <ItemGroup>
     <TypeScriptCompile Include="Scripts\App.ts" />
     <TypeScriptCompile Include="Scripts\Display.ts" />
-    <TypeScriptCompile Include="Scripts\Canvas.ts" />
+    <TypeScriptCompile Include="Scripts\Graphics\Canvas.ts" />
     <TypeScriptCompile Include="Scripts\Files.ts" />
+    <TypeScriptCompile Include="Scripts\Graphics\Color.ts" />
+    <TypeScriptCompile Include="Scripts\Graphics\Group.ts" />
+    <TypeScriptCompile Include="Scripts\Graphics\Line.ts" />
+    <TypeScriptCompile Include="Scripts\Graphics\Orientation.ts" />
+    <TypeScriptCompile Include="Scripts\Graphics\Rectangle.ts" />
+    <TypeScriptCompile Include="Scripts\Graphics\Text.ts" />
     <TypeScriptCompile Include="Scripts\Tests.ts" />
     <TypeScriptCompile Include="Scripts\typings\FileReaderSync.d.ts" />
     <TypeScriptCompile Include="Scripts\typings\jquery\jquery.d.ts" />
@@ -50,11 +56,7 @@
       <DependentUpon>web.config</DependentUpon>
     </None>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Scripts\compiler\" />
-    <Folder Include="Scripts\core\" />
-    <Folder Include="Scripts\workers\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Data" />

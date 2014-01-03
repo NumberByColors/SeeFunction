@@ -13,6 +13,8 @@ window.onload = () => {
         context.fillRect(centerX + spacing, centerY + spacing, squareLength, squareLength); //Bottom-right square
         context.fillStyle = "#00A1F1"; //Microsoft blue
         context.fillRect(centerX - spacing - squareLength, centerY + spacing, squareLength, squareLength); //Bottom-left square
+
+        //Canvas.drawWithContext(context, someDrawing);
     }, { panAndZoom: true });
 };
 

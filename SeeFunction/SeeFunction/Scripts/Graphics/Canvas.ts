@@ -29,6 +29,40 @@ class Canvas {
         this.redraw();
     }
 
+    public static drawWithContext(context: CanvasRenderingContext2D, drawing: Group): void {
+        
+    }
+
+    private static drawRectangleWithContext(context: CanvasRenderingContext2D, rectangle: Rectangle, x: number, y: number): void {
+        context.save();
+        
+        context.fillStyle = ColorHelpers.getHexCode(rectangle.fillColor);
+        context.fillRect(x, y, rectangle.width, rectangle.height);
+        context.strokeStyle = ColorHelpers.getHexCode(rectangle.borderColor);
+        context.strokeRect(x, y, rectangle.width, rectangle.height);
+        
+        context.restore();
+    }
+
+    private static drawLineWithContext(context: CanvasRenderingContext2D, line: Line, x: number, y: number): void {
+        context.save();
+
+        context.lineWidth = line.thickness;
+        context.beginPath();
+        context.moveTo(x, y);
+        switch (line.orientation) {
+            case Orientation.Horizontal:
+                context.lineTo(x + line.length, y);
+                break;
+            case Orientation.Vertical:
+                context.lineTo(x, y + line.length);
+                break;
+        }
+        context.stroke();
+
+        context.restore();
+    }
+
     private clearCanvas() {
         this.context.save();
         this.context.setTransform(1,0,0,1,0,0);
