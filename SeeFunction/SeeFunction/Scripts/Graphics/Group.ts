@@ -3,3 +3,5 @@ interface Group {
     orientation: Orientation;
     spacing?: number; //null means auto, 0 means no spacing, positive number means that amount of spacing between elements
 }
+
+//needs some kind of alignment and 

@@ -29,7 +29,7 @@ class Canvas {
         this.redraw();
     }
 
-    public static drawWithContext(context: CanvasRenderingContext2D, drawing: Group): void {
+    public static drawGroupWithContext(context: CanvasRenderingContext2D, drawing: Group): void {
         
     }
 
@@ -59,6 +59,12 @@ class Canvas {
                 break;
         }
         context.stroke();
+
+        context.restore();
+    }
+
+    private static drawTextWithContext(context: CanvasRenderingContext2D, text: Text, x: number, y: number): void {
+        context.save();
 
         context.restore();
     }
