@@ -34,7 +34,7 @@ window.onload = () => {
         firstRow.setHorizontalChildElements([redSquare, greenSquare], 0, 5);
 
         var secondRow = new Rectangle(false);
-        secondRow.setHorizontalChildElements([yellowSquare, blueSquare], 0, 5);
+        secondRow.setHorizontalChildElements([blueSquare, yellowSquare], 0, 5);
 
         var microsoftLogo = new Rectangle(false);
         microsoftLogo.setVerticalChildElements([firstRow, secondRow], 0, 5);
