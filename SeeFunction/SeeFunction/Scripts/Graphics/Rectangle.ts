@@ -32,6 +32,7 @@ class Rectangle implements Drawable {
                 var maxChildWidth = Math.max.apply(Math, childWidths);
                 return maxChildWidth + (2 * this.childElementOffset);
                 break;
+
             case Orientation.Horizontal:
                 var childWidths = this.childElements.map(e => e.getWidth());
                 var totalChildWidths = childWidths.reduce((previousValue, currentValue) => {
@@ -61,6 +62,7 @@ class Rectangle implements Drawable {
                 var totalChildSpacing = this.childElementSpacing * (this.childElements.length - 1);
                 return totalChildHeights + totalChildSpacing + (2 * this.childElementOffset);
                 break;
+
             case Orientation.Horizontal:
                 var childHeights = this.childElements.map(e => e.getHeight());
                 var maxChildHeight = Math.max.apply(Math, childHeights);
@@ -97,7 +99,7 @@ class Rectangle implements Drawable {
         this.childElementOrientation = Orientation.Horizontal;
         this.childElements = elements;
         elements.forEach(e => e.parentElement = this);
-        this.childElementOffset = spacing ? spacing : 0;
+        this.childElementOffset = offset ? offset : 0;
         this.childElementSpacing = spacing ? spacing : 0;
     }
 } 

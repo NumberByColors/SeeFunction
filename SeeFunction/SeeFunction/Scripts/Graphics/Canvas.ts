@@ -35,8 +35,10 @@ class Canvas {
                 var rectangle = <Rectangle> element;
                 Canvas.drawRectangleWithContext(context, rectangle, x, y);
                 break;
+
             case "Text":
                 break;
+
             case "Line":
                 break;
         }
@@ -57,6 +59,7 @@ class Canvas {
                 case Orientation.Vertical:
                     Canvas.drawVerticalChildElementsWithContext(context, rectangle.childElements, x, y, rectangle.childElementOffset, rectangle.childElementSpacing);
                     break;
+
                 case Orientation.Horizontal:
                     Canvas.drawHorizontalChildElementsWithContext(context, rectangle.childElements, x, y, rectangle.childElementOffset, rectangle.childElementSpacing);
                     break;
@@ -67,14 +70,18 @@ class Canvas {
     }
 
     private static drawVerticalChildElementsWithContext(context: CanvasRenderingContext2D, elements: Drawable[], parentLeftX: number, parentTopY: number, elementOffset: number, elementSpacing: number) {
+        var incrementalTotalElementHeights = [0];
         for (var i = 0; i < elements.length; i++) {
-            Canvas.drawWithContext(context, elements[i], parentLeftX + elementOffset, parentTopY + (i * elementSpacing) + elementOffset);
+            Canvas.drawWithContext(context, elements[i], parentLeftX + elementOffset, parentTopY + incrementalTotalElementHeights[i] + (i * elementSpacing) + elementOffset);
+            incrementalTotalElementHeights.push(incrementalTotalElementHeights[i] + elements[i].getHeight());
         }
     }
 
     private static drawHorizontalChildElementsWithContext(context: CanvasRenderingContext2D, elements: Drawable[], parentLeftX: number, parentTopY: number, elementOffset: number, elementSpacing: number) {
+        var incrementalTotalElementWidths = [0];
         for (var i = 0; i < elements.length; i++) {
-            Canvas.drawWithContext(context, elements[i], parentLeftX + (i * elementSpacing) + elementOffset, parentTopY + elementOffset);
+            Canvas.drawWithContext(context, elements[i], parentLeftX + incrementalTotalElementWidths[i] + (i * elementSpacing) + elementOffset, parentTopY + elementOffset);
+            incrementalTotalElementWidths.push(incrementalTotalElementWidths[i] + elements[i].getWidth());
         }
     }
 
@@ -88,6 +95,7 @@ class Canvas {
     //        case Orientation.Horizontal:
     //            context.lineTo(x + line.length, y);
     //            break;
+    //
     //        case Orientation.Vertical:
     //            context.lineTo(x, y + line.length);
     //            break;
