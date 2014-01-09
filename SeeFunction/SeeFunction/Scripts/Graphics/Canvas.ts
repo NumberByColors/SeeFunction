@@ -29,45 +29,73 @@ class Canvas {
         this.redraw();
     }
 
-    public static drawGroupWithContext(context: CanvasRenderingContext2D, drawing: Group): void {
-        
+    public static drawWithContext(context: CanvasRenderingContext2D, element: Drawable, x: number, y: number): void {
+        switch (element.elementType) {
+            case "Rectangle":
+                var rectangle = <Rectangle> element;
+                Canvas.drawRectangleWithContext(context, rectangle, x, y);
+                break;
+            case "Text":
+                break;
+            case "Line":
+                break;
+        }
     }
 
     private static drawRectangleWithContext(context: CanvasRenderingContext2D, rectangle: Rectangle, x: number, y: number): void {
         context.save();
-        
-        context.fillStyle = ColorHelpers.getHexCode(rectangle.fillColor);
-        context.fillRect(x, y, rectangle.width, rectangle.height);
-        context.strokeStyle = ColorHelpers.getHexCode(rectangle.borderColor);
-        context.strokeRect(x, y, rectangle.width, rectangle.height);
-        
-        context.restore();
-    }
 
-    private static drawLineWithContext(context: CanvasRenderingContext2D, line: Line, x: number, y: number): void {
-        context.save();
+        if (rectangle.visible) {
+            context.fillStyle = ColorHelpers.getHexCode(rectangle.fillColor);
+            context.fillRect(x, y, rectangle.getWidth(), rectangle.getHeight());
+            context.strokeStyle = ColorHelpers.getHexCode(rectangle.borderColor);
+            context.strokeRect(x, y, rectangle.getWidth(), rectangle.getHeight());
+        } 
 
-        context.lineWidth = line.thickness;
-        context.beginPath();
-        context.moveTo(x, y);
-        switch (line.orientation) {
-            case Orientation.Horizontal:
-                context.lineTo(x + line.length, y);
-                break;
-            case Orientation.Vertical:
-                context.lineTo(x, y + line.length);
-                break;
+        if (rectangle.childElements) {
+            switch (rectangle.childElementOrientation) {
+                case Orientation.Vertical:
+                    Canvas.drawVerticalChildElementsWithContext(context, rectangle.childElements, x, y, rectangle.childElementOffset, rectangle.childElementSpacing);
+                    break;
+                case Orientation.Horizontal:
+                    Canvas.drawHorizontalChildElementsWithContext(context, rectangle.childElements, x, y, rectangle.childElementOffset, rectangle.childElementSpacing);
+                    break;
+            }
         }
-        context.stroke();
-
+        
         context.restore();
     }
 
-    private static drawTextWithContext(context: CanvasRenderingContext2D, text: Text, x: number, y: number): void {
-        context.save();
-
-        context.restore();
+    private static drawVerticalChildElementsWithContext(context: CanvasRenderingContext2D, elements: Drawable[], parentLeftX: number, parentTopY: number, elementOffset: number, elementSpacing: number) {
+        for (var i = 0; i < elements.length; i++) {
+            Canvas.drawWithContext(context, elements[i], parentLeftX + elementOffset, parentTopY + (i * elementSpacing) + elementOffset);
+        }
     }
+
+    private static drawHorizontalChildElementsWithContext(context: CanvasRenderingContext2D, elements: Drawable[], parentLeftX: number, parentTopY: number, elementOffset: number, elementSpacing: number) {
+        for (var i = 0; i < elements.length; i++) {
+            Canvas.drawWithContext(context, elements[i], parentLeftX + (i * elementSpacing) + elementOffset, parentTopY + elementOffset);
+        }
+    }
+
+    //private static drawLineWithContext(context: CanvasRenderingContext2D, line: Line, x: number, y: number): void {
+    //    context.save();
+
+    //    context.lineWidth = line.thickness;
+    //    context.beginPath();
+    //    context.moveTo(x, y);
+    //    switch (line.orientation) {
+    //        case Orientation.Horizontal:
+    //            context.lineTo(x + line.length, y);
+    //            break;
+    //        case Orientation.Vertical:
+    //            context.lineTo(x, y + line.length);
+    //            break;
+    //    }
+    //    context.stroke();
+
+    //    context.restore();
+    //}
 
     private clearCanvas() {
         this.context.save();

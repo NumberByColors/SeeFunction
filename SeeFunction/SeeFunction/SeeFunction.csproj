@@ -37,7 +37,8 @@
     <TypeScriptCompile Include="Scripts\Graphics\Line.ts" />
     <TypeScriptCompile Include="Scripts\Graphics\Orientation.ts" />
     <TypeScriptCompile Include="Scripts\Graphics\Rectangle.ts" />
-    <TypeScriptCompile Include="Scripts\Graphics\Text.ts" />
+    <TypeScriptCompile Include="Scripts\Graphics\Drawable.ts" />
+    <TypeScriptCompile Include="Scripts\Graphics\TextElement.ts" />
     <TypeScriptCompile Include="Scripts\Tests.ts" />
     <TypeScriptCompile Include="Scripts\typings\FileReaderSync.d.ts" />
     <TypeScriptCompile Include="Scripts\typings\jquery\jquery.d.ts" />
