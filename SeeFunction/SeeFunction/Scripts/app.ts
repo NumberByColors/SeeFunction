@@ -17,7 +17,7 @@ window.onload = () => {
         var redSquare = new Rectangle(true, Color.Red);
         redSquare.setHeight(100);
         redSquare.setWidth(100);
-
+       
         var greenSquare = new Rectangle(true, Color.Green);
         greenSquare.setHeight(100);
         greenSquare.setWidth(100);
@@ -39,7 +39,7 @@ window.onload = () => {
         var microsoftLogo = new Rectangle(false);
         microsoftLogo.setVerticalChildElements([firstRow, secondRow], 0, 5);
 
-        Canvas.drawWithContext(context, microsoftLogo, centerX, centerY);
+        Canvas.drawCenteredWithContext(context, microsoftLogo);
     }, { panAndZoom: true });
 };
 

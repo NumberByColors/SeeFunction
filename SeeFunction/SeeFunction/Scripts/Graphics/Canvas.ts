@@ -44,6 +44,16 @@ class Canvas {
         }
     }
 
+    public static drawCenteredWithContext(context: CanvasRenderingContext2D, element: Drawable): void {
+        var canvasWidth = context.canvas.width;
+        var canvasHeight = context.canvas.height;
+        var elementWidth = element.getWidth();
+        var elementHeight = element.getHeight();
+        var centeredElementX = (canvasWidth - elementWidth) / 2;
+        var centeredElementY = (canvasHeight - elementHeight) / 2;
+        Canvas.drawWithContext(context, element, centeredElementX, centeredElementY);
+    }
+
     private static drawRectangleWithContext(context: CanvasRenderingContext2D, rectangle: Rectangle, x: number, y: number): void {
         context.save();
 
